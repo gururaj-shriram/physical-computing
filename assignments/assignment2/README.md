@@ -7,3 +7,5 @@ This project involved using digital input and output to create an LED spaceship 
 When the switch is not pressed (giving a LOW state), the 2 Red LEDs alternate between HIGH and LOW with delays in the middle to make the toggling viewable to the user. When the switch is pressed, the Green LEDs light up and the Red LEDs stop toggling. A picture of the project is shown below:
 
 ![actual space ship interface](actual_spaceship_interface.png)
+
+Watch the interface demo [here](https://youtu.be/xbReF4W3NeQ)!
