@@ -8,7 +8,7 @@ void setup() {
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, HIGH);
 
-  // calibration
+  // calibration, 7 seconds
   while (millis() < 7000) {
 
     sensorValue = analogRead(A0);
