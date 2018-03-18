@@ -45,6 +45,8 @@ In `mindlight.ino`, once the toggling bit is received by the Arduino's serial po
 
 ![MindLight Final Product](assets/Final_Output.jpg)
 
+Watch the MindLight demo [here](https://youtu.be/P9qsmH5y4IQ)!
+
 ## Project Retrospective
 ### What Worked
 Ultimately, the entire end-to-end pipeline of MindWave headset, to a port on my computer, to the Arduino's serial port, and finally instructions to the LEDs worked well overall. A user's blink is able to be successfully translated into changing the modes of a constructed flashlight.
