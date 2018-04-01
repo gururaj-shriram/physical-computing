@@ -1,4 +1,4 @@
-#MindLight 3D Model
+# MindLight 3D Model
 
 To learn 3D Modeling using Onshape, I recreated the case from MindLight as a 3D Model. The model looks like this:
 
