@@ -23,6 +23,8 @@ I wanted to create a fun project that combines the physical and digital world. O
 ### 3D Printed Laser Pointer Clamp
 To attach the laser pointer to the pan-tilt device, I 3D Printed a clamp. It is essentially a box that has a hole to fit the laser pointer and a base that fits on top of the pan-tilt device. The dimensions of the hole and base were a bit too tight, so cutting tools were used to make more space. 
 
+![Laser Pointer Clamp](assets/Laser_Pointer_Clamp.JPG)
+
 ## Input
 The input to Word Jam is the input from the Arduino controller. The Arduino controller is comprised of the pan-tilt device with a laser pointer clamped on top, a joystick, and two pushbuttons (1 green add button and 1 red remove button). When the user moves the joystick, the movement is mapped to the movement of the pan-tilt device which thusly moves the position of the laser and the cursor on the front end. When the user presses either the joystick select button (used to grab and move a word), add button (to add a random word), or red button (to remove a grabbed word), the signal is recorded. During every cycle of the Arduino's program, the positions of the laser (via the positions of the two servos on the pan-tilt device) and states of the joystick select button, add button, and remove button are sent to Word Jam's front end which is a `p5js` canvas. The aforementioned pieces of data are sent as a space separated string to the front end using by using the Arduino's serial output. 
 
@@ -64,13 +66,14 @@ Whenever a button, in this case the add button, remove button, or joystick selec
 `sketch.js` includes the main code that is used for the `p5js` front end. The `p5 Serial` library is used to receive serial output from the Arduino. Once the `SerialPort` object is opened, a series of callbacks trigger when serial events occur; the most important callback is the data callback. Whenever data is received from the Arduino, it is parsed and split into an array because the input includes space separated values. 
 
 #### Calibration
-To map the pan-tilt values with the values used in the `p5js` sketch, a calibration is required. Before beginning to play Word Jam, the laser should be moved to the top left and bottom right corners of the sketch, while pressing the `s` and `e` keys respectively after arriving at the necessary location. This is done to record the minimum and maximum pan and tilt values (or X and Y values for the sketch). These values are used to map pan and tilt values to X and Y positions on the canvas.
+To map the pan-tilt values with the values used in the `p5js` sketch, a calibration is required. Before beginning to play Word Jam, the laser should be moved to the top left and bottom right corners of the sketch, while pressing the `s` and `e` keys repeatedly and respectively after arriving at the necessary location until the cursor's position changes. The keys must be pressed until the cursor changes position to ensure that the values have been transmitted from the controller to the `p5js` sketch. This is done to record the minimum and maximum pan and tilt values (or X and Y values for the sketch). These values are used to map pan and tilt values to X and Y positions on the canvas.
 
 #### Using The Data
 Once calibration is performed, the data can be used. The pan and tilt values are mapped to X and Y values on the `p5js` canvas, and the cursor (which is just a visual 'X') is updated accordingly. If a `1` is received for the add button, remove button, and/or joystick select button, the corresponding function is called; if a `0` is received, nothing happens. 
 
 ## The Final Product
-
+![Final Setup](assets/Final_Setup.JPG)
+Watch the demo [here](https://youtu.be/aP2y0QmEmxM)!
 
 ## Project Retrospective
 ### What Worked
