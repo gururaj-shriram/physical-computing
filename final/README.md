@@ -72,7 +72,8 @@ To map the pan-tilt values with the values used in the `p5js` sketch, a calibrat
 Once calibration is performed, the data can be used. The pan and tilt values are mapped to X and Y values on the `p5js` canvas, and the cursor (which is just a visual 'X') is updated accordingly. If a `1` is received for the add button, remove button, and/or joystick select button, the corresponding function is called; if a `0` is received, nothing happens. 
 
 ## The Final Product
-![Final Setup](assets/Final_Setup.JPG)
+![Final Setup Unmounted](assets/Final_Setup.JPG)
+![Final Setup Mounted](assets/Final_Setup_Mounted.JPG)
 Watch the demo [here](https://youtu.be/aP2y0QmEmxM)!
 
 ## Project Retrospective
