@@ -74,7 +74,7 @@ Once calibration is performed, the data can be used. The pan and tilt values are
 ## The Final Product
 ![Final Setup Unmounted](assets/Final_Setup.JPG)
 ![Final Setup Mounted](assets/Final_Setup_Mounted.JPG)
-!(Final Setup In Festival)(assets/Final_Setup_In_Festival.JPG)
+![Final Setup In Festival](assets/Final_Setup_In_Festival.JPG)
 Watch the demo [here](https://youtu.be/aP2y0QmEmxM)!
 
 ## Project Retrospective
