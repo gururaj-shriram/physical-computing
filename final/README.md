@@ -74,6 +74,7 @@ Once calibration is performed, the data can be used. The pan and tilt values are
 ## The Final Product
 ![Final Setup Unmounted](assets/Final_Setup.JPG)
 ![Final Setup Mounted](assets/Final_Setup_Mounted.JPG)
+!(Final Setup In Festival)(assets/Final_Setup_In_Festival.JPG)
 Watch the demo [here](https://youtu.be/aP2y0QmEmxM)!
 
 ## Project Retrospective
@@ -83,7 +84,9 @@ Ultimately, the entire end-to-end pipeline of using joystick controls for laser 
 ### What Didn't Work
 Because both the `p5 Serial` and `p5 Sound` libraries were used in the front end, the former would not allow running the sketch on a local server as it is using deprecated protocols and the latter requires running the local server to avoid browser security concerns of loading assets from a relative file path. Due to these conflicting limitations of the two libraries, the "solution" to use both these libraries is to run the local server and open the sketch using a relative path on a browser that does not have the aforementioned security concerns, such as `Mozilla Firefox`. A more in depth explanation of this is in the source code repository. 
 
-Further, the laser movements are extremely sensitive, making it nontrivial to move it to the desired position. This is partially due to the fact that the resting value of the joystick is not always at the `(0, 0)` position and sometimes disperses in the `+- 1` range. Although experimentation was done to make it simpler, such as changing the servos from `write()` to `writeMicroseconds()`, it is still not as easy to use as was intended. Future testing may be needed to improve this. 
+Further, the laser movements are extremely sensitive, making it nontrivial to move it to the desired position. This is partially due to the fact that the resting value of the joystick is not always at the `(0, 0)` position and sometimes disperses in the `+- 1` range. Although experimentation was done to make it simpler, such as changing the servos from `write()` to `writeMicroseconds()`, it is still not as easy to use as was intended. Further, because the screen may not be extremely big, it is possible that calibration may map the min and max servo positions to be relatively close to each other. This causes a high sensitivity that renders the controller to be near unusable.
+
+Calibration was also difficult and near-impossible to form. In order for it to work flawlessly, it is required that the controller to be fully level on the tripod it sits on and that the controller's sensitivty is low enough that the laser can reach the exact positions of the top left and bottom right corners of the sketch. In practice, this is just not feasible and the laser was not able to reliably follow the cursor (i.e. the position that the laser pointed to was not equivalent to the position that the sketch believed it was pointing to).
 
 ### if more_time:
-If I had more time, I would try to experiment and try to make the laser movements more intuitive. I would also try to use other forms of controllers, such as gesture controls, image processing, or voice processing to try to create an even better controller for the human-computer interaction. It'd be incredible if the controller is "intelligent" enough to recognize the user's actions easily and efficiently.
+If I had more time, I would try to experiment and try to make the laser movements more intuitive and easy to control. I may also try to improve the calibration and sensitivity to enhance the controller. I would also try to use other forms of controllers, such as gesture controls, image processing, or voice processing to try to create an even better controller for the human-computer interaction. It'd be incredible if the controller is "intelligent" enough to recognize the user's actions easily and efficiently.
